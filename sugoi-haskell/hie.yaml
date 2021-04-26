@@ -1,0 +1,27 @@
+cradle:
+  stack:
+    - path: "./src"
+      component: "sugoi-haskell:lib"
+
+    - path: "./app/Main.hs"
+      component: "sugoi-haskell:exe:sugoi-haskell-exe"
+
+    - path: "./app/Paths_sugoi_haskell.hs"
+      component: "sugoi-haskell:exe:sugoi-haskell-exe"
+
+    - path: "./test"
+      component: "sugoi-haskell:test:sugoi-haskell-test"
+
+    # https://github.com/haskell/haskell-language-server#configuring-your-project-build
+    - path: "./test/functional/"
+      component: "haskell-language-server:func-test"
+    - path: "./app/Main.hs"
+      component: "haskell-language-server:exe:haskell-language-server"
+    - path: "./app/Wrapper.hs"
+      component: "haskell-language-server:exe:haskell-language-server-wrapper"
+    - path: "./src"
+      component: "haskell-language-server:lib"
+    - path: "./ghcide/src"
+      component: "ghcide:lib:ghcide"
+    - path: "./ghcide/exe"
+      component: "ghcide:exe:ghcide"
